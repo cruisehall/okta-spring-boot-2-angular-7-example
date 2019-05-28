@@ -1,10 +1,12 @@
 package com.okta.developer.demo;
 
-import lombok.*;
-
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Entity
 @Data
@@ -13,4 +15,8 @@ public class Car {
     @Id @GeneratedValue
     private Long id;
     private @NonNull String name;
+
+    public String getName() {
+      return this.name;
+    }
 }

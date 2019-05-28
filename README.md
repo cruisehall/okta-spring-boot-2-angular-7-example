@@ -44,31 +44,6 @@ To create a new OIDC app on Okta:
 3. Select **Single-Page App** and click **Next**. 
 4. Give the application a name, change all instances of `localhost:8080` to `localhost:4200` and click **Done**.
 
-#### Server Configuration
-
-Set your domain and copy the `clientId` into `server/src/main/resources/application.yml`. 
-
-**NOTE:** The value of `{yourOktaDomain}` should be something like `dev-123456.oktapreview`. Make sure you don't include `-admin` in the value!
-
-```yaml
-okta:
-  oauth2:
-    client-id: {clientId}
-    issuer: https://{yourOktaDomain}/oauth2/default
-```
-
-#### Client Configuration
-
-For the client, set the `issuer` and copy the `clientId` into `client/src/app/app.module.ts`.
-
-```typescript
-const config = {
-  issuer: 'https://{yourOktaDomain}/oauth2/default',
-  redirectUri: window.location.origin + '/implicit/callback',
-  clientId: '{clientId}'
-};
-```
-
 ## Links
 
 This example uses the following open source libraries from Okta:
